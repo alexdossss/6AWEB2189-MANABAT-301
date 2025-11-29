@@ -1,133 +1,136 @@
 <style>
-.homepage-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 80px 50px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: hidden;
+  body {
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .homepage-layout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .content-left {
+    padding: 40px 0;
+    z-index: 10;
+    background: transparent;
+  }
+
+  .content-left p,
+  .content-left h1{
+    background: transparent;
+  }
+
+
+  .content-left h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    color: #ffffff;
+  }
+
+  .content-left > p {
+    color: #ffffff;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  .content-left .subject{
+    color: #7f5cff;
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.9;
+  }
+
+  .section-description {
+    margin-top: 30px;
+    padding: 20px 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(127, 92, 255, 0.3);
+    box-shadow: 0 0 20px rgba(127, 92, 255, 0.1);
+  }
+
+  .section-description p {
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+.inner::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5%; 
+  left: 40%; 
+  width: 50%;
+  height: 90%;
+  opacity: 0.1;
+  
+  background-position: 0 0;
+  background-image:
+    radial-gradient(
+      circle at 50% 50%,
+      #6f50ff 0%,
+      transparent 70%
+    ),
+    linear-gradient(to right, rgba(127, 92, 255, 1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(127, 92, 255, 1) 1px, transparent 1px);
+    
+  background-size: 30px 30px;
+  transform: perspective(1000px) rotateX(15deg) rotateY(-15deg);
+  transition: all 0.5s ease, transform 0.8s ease-in-out; 
 }
 
-.content-left {
-  flex: 1;
-  max-width: 50%;
-  padding-right: 50px;
-  z-index: 2;
-}
-
-.content-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  max-width: 50%;
-  z-index: 2;
-}
-
-h1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 3.8em;
-  text-align: left;
-  line-height: 1.1;
-  margin-top: 0;
-}
-
-.pre-heading {
-  font-size: 0.8em;
-  font-weight: 600;
-  color: #e74c3c;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-p {
-  font-family: Arial, sans-serif;
-  font-size: 1.1em;
-  margin: 10px 0;
-  color: #7f8c8d;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.section-description {
-  margin-top: 20px;
-  font-size: 1em;
-  color: #34495e;
-  border-top: 1px solid #ecf0f1;
-  padding-top: 20px;
-}
-
-.image-wrapper {
-  padding: 0;
-  border-radius: 0;
-  overflow: hidden;
-}
-
-img {
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 0;
-  box-shadow: none;
-  transform: scale(1.05);
-}
-
-.wave-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to top, rgba(236, 240, 241, 0.5) 0%, transparent 100%);
-}
-
-.btn-primary {
-  background-color: #e74c3c;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 5px;
-  font-weight: 600;
-  margin-top: 20px;
-  cursor: pointer;
-  display: inline-block;
-  transition: background-color 0.2s;
-}
-
-.btn-primary:hover {
-  background-color: #c0392b;
-}
-
-.inner{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+  @media (max-width: 768px) {
+    .inner {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .content-left {
+      padding: 20px 0;
+    }
+    .content-left h1 {
+      font-size: 2.5rem;
+    }
+    .inner::after {
+      min-height: 300px;
+      margin-top: 20px;
+      transform: none;
+      background-size: 25px 25px;
+    }
+  }
 </style>
-
 
 <div class="homepage-layout">
 
   <div class="inner">
     <div class="content-left">
-      <p class="pre-heading">6AWEB</p>
+      <p class="subject">6AWEB</p>
       <h1>{{message}}</h1>
 
-      <p>Hello Im, {{name}}</p>
-      <p>Section:{{section}} </p>
+      <p>Hello I'm, {{name}}</p>
+      <p>Section: {{section}} </p>
 
       <section class="section-description">
-        <p>This activity Showcases Data Binding, its types and applications in various scenarios</p>
+        <p>This activity showcases Routing and Navigation, Data Binding, and Directives in Angular, demonstrating how these features work together to enable smooth navigation, synchronized UI data, and dynamic DOM behavior for efficient and responsive application development.</p>
       </section>
     </div>
   </div>
