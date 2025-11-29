@@ -30,11 +30,19 @@ WD 302
 Alexander Manabat  
 WD 302
 
+- Learned how to perform appropriate routing for angular without going to new pages
+
+- Use of RouterOutlet
+
 
 # Prelim Lab Activity 4: Angular Directives Demo
 29/11/2025
 
 Alexander Manabat  
 WD 302
+
+- Learned how Angular directives work and what they are used for.
+
+- Learned how directives help update and control what appears on the screen.
 
 
