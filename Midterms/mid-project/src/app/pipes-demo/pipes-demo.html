@@ -1,0 +1,67 @@
+<div class="header-container">
+  <h1><i class="fas fa-user-circle"></i> ALEXANDER MANABAT</h1>
+  <h1 style="font-size: 1.5rem; color: #666;">WD301</h1>
+</div>
+
+<div class="pipe-container">
+  <h3><i class="fas fa-calendar-alt"></i> Date Pipe</h3>
+  <p>Today's date :- {{presentDate | date }}</p>
+  <p>Short Date:- {{presentDate | date:'shortDate'}}</p>
+  <p>Full date:- {{presentDate | date:'fullDate'}}</p>
+  <p>Formatted date:- {{presentDate | date:'M/dd/yyyy'}} </p>
+  <p>Hours and minutes :- {{presentDate | date:'h:mm'}}</p>
+  <p>Uppercase :- {{presentDate | date:'fullDate' | uppercase}}</p>
+  <p>Lowercase :- {{presentDate | date:'fullDate' | lowercase}}</p>
+</div>
+
+<div class="pipe-container" style="text-align: center;">
+  <h3><i class="fas fa-clock"></i> Async Pipe (Live Clock)</h3>
+  <div class="clock-display">
+    {{ time$ | async | date: 'mediumTime' }}
+  </div>
+</div>
+
+<div class="pipe-container">
+  <h3><i class="fas fa-coins"></i> Currency Pipe</h3>
+  <p>Default: {{price | currency: '' : true}}</p>
+  <p>INR Format: {{price | currency: 'INR'}}</p>
+</div>
+
+<div class="pipe-container">
+  <h3><i class="fas fa-slice"></i> Slice Pipe</h3>
+  <p>Start index (2):- {{fruits | slice: 2}}</p>
+  <p>Range (1:4):- {{fruits | slice: 1:4}}</p>
+  <p>Last two (-2):- {{fruits | slice: -2}}</p>
+</div>
+
+<div class="pipe-container">
+  <h3><i class="fas fa-calculator"></i> Decimal Pipe</h3>
+  <p>Normal: {{decimalNum1 | number}}</p>
+  <p>Formatted (3.1):- {{decimalNum1 | number:'3.1'}}</p>
+  <p>Range (2.1-4):- {{decimalNum1 | number:'2.1-4'}}</p>
+</div>
+
+<div class="pipe-container">
+  <h3><i class="fas fa-percentage"></i> Percent Pipe</h3>
+  <p>Default: {{ projectCompletion | percent }}</p>
+  <p>Precise: {{ projectCompletion | percent:'1.2-2' }}</p>
+  <p>Growth: {{ growthRate | percent:'1.1-1' }}</p>
+</div>
+
+<div class="pipe-container">
+  <h3><i class="fas fa-font"></i> Title Case Pipe</h3>
+  <p>User: {{ userFullName | titlecase }}</p>
+  <p>Header: {{ pageHeading | titlecase }}</p>
+  <p>Position: {{ jobTitle | titlecase }}</p>
+</div>
+
+<div class="pipe-container">
+  <h3><i class="fas fa-list-ul"></i> KeyValue Pipe</h3>
+  <ul class="keyvalue-list">
+    <li class="keyvalue-item" *ngFor="let stat of userStats | keyvalue">
+      <span><i class="fas fa-check-circle" style="color: #28a745; margin-right: 8px;"></i>
+      <strong>{{ stat.key | titlecase }}:</strong></span>
+      <span class="badge">{{ stat.value }}</span>
+    </li>
+  </ul>
+</div>
