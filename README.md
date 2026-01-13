@@ -46,3 +46,12 @@ WD 302
 - Learned how directives help update and control what appears on the screen.
 
 
+# Prelim Lab Activity: Netlify Deployment
+02/12/2025
+
+Alexander Manabat  
+WD 302
+
+- Learned how to deploy static websites using netlify
+
+
