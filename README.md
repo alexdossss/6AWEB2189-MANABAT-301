@@ -2,7 +2,7 @@
 18/11/2025
 
 Alexander Manabat  
-WD 302
+WD 301
 
 -Edited and Personalized the given sample code by the prof, by editing the Styles and Data.
 
@@ -15,7 +15,7 @@ WD 302
 18/11/2025
 
 Alexander Manabat  
-WD 302
+WD 301
 
 -Learned about components and non components
 
@@ -28,7 +28,7 @@ WD 302
 25/11/2025
 
 Alexander Manabat  
-WD 302
+WD 301
 
 - Learned how to perform appropriate routing for angular without going to new pages
 
@@ -39,7 +39,7 @@ WD 302
 29/11/2025
 
 Alexander Manabat  
-WD 302
+WD 301
 
 - Learned how Angular directives work and what they are used for.
 
@@ -50,8 +50,17 @@ WD 302
 02/12/2025
 
 Alexander Manabat  
-WD 302
+WD 301
 
 - Learned how to deploy static websites using netlify
+
+
+# Midterm Pipes
+13/01/2026
+
+Alexander Manabat 
+WD 301
+
+Learned About the use of Different Pipes and how they maintain data consistency. 
 
 
