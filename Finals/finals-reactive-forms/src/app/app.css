@@ -1,0 +1,36 @@
+/* Theme variables (connects all forms) */
+:root {
+  --primary: #004abc;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --font-main: 'Montserrat', 'Lato', sans-serif;
+}
+
+/* Reset */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Name styling */
+.author {
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}

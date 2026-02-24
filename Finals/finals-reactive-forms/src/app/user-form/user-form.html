@@ -1,0 +1,35 @@
+<form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+  <h1>Template Driven Form</h1>
+  <div>
+    <label>Username:</label>
+    <input type="text" name="username" [(ngModel)]="userModel.username" required #uname="ngModel">
+    <div *ngIf="uname.invalid && uname.touched">
+      Username is required.
+    </div>
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input type="email" name="email" [(ngModel)]="userModel.email" required email #uemail="ngModel">
+    <div *ngIf="uemail.invalid && uemail.touched">
+      Enter a valid email.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+
+@if (showModal) {
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Form Data Submitted</h2>
+      <hr />
+      <div class="data-list">
+        @for (item of submittedData | keyvalue; track item.key) {
+          <p><strong>{{ item.key }}:</strong> {{ item.value }}</p>
+        }
+      </div>
+      <button class="btn" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+}

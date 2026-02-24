@@ -1,0 +1,51 @@
+<div class="card">
+  <h1>Reactive Driven Form</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input class="input" placeholder="Username" formControlName="username" />
+    @if (isInvalid('username')) { <small class="error">4-12 chars (letters/numbers/_)</small> }
+
+    <input class="input" type="email" placeholder="Email" formControlName="email" />
+    @if (isInvalid('email')) { <small class="error">Enter a valid email</small> }
+
+    <input class="input" type="password" placeholder="Password" formControlName="password" />
+    @if (isInvalid('password')) { <small class="error">8+ with upper, lower, number</small> }
+
+    <select class="input" formControlName="role">
+      @for (r of roles; track r) { <option [value]="r">{{ r }}</option> }
+    </select>
+
+    <div class="radio-group">
+      <label>Gender: </label>
+      @for (g of genders; track g) {
+        <input type="radio" [value]="g" formControlName="gender"> {{g}}
+      }
+    </div>
+    @if (isInvalid('gender')) { <small class="error">Please select gender</small> }
+
+    <select class="input" formControlName="status">
+      <option value="" disabled>Select Status</option>
+      @for (s of statuses; track s) { <option [value]="s">{{ s }}</option> }
+    </select>
+    @if (isInvalid('status')) { <small class="error">Status is required</small> }
+
+    <textarea class="input" placeholder="Comments" formControlName="comments"></textarea>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
+
+@if (showModal) {
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Form Data Submitted</h2>
+      <hr />
+      <div class="data-list">
+        @for (item of submittedData | keyvalue; track item.key) {
+          <p><strong>{{ item.key }}:</strong> {{ item.value }}</p>
+        }
+      </div>
+      <button class="btn" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+}

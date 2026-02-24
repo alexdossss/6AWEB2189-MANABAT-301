@@ -1,0 +1,128 @@
+/* Page center */
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Lato', sans-serif;
+  background: #f5f7fb;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form container */
+form {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  width: 360px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Title */
+form h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Field wrapper */
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.9rem;
+}
+
+/* Labels */
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+/* Inputs */
+input {
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #fafafa;
+  font-size: 0.92rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Focus */
+input:focus {
+  border-color: #004abc;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0,74,188,0.08);
+}
+
+/* Error message */
+form div div {
+  color: #d93025;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #004abc;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* Hover */
+button:hover:not(:disabled) {
+  background: #00379c;
+}
+
+/* Disabled */
+button:disabled {
+  background: #bfc7d9;
+  cursor: not-allowed;
+}
+
+/* Modal Overlay - Dims the background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures it stays on top */
+}
+
+/* Modal Box */
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  min-width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  color: #333;
+}
+
+.data-list {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.data-list p {
+  margin: 8px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
